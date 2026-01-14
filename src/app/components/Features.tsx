@@ -1,40 +1,43 @@
 import React from "react";
-import { Shield, Target, Users, Zap } from "lucide-react";
+import { Brain, Heart, Activity, Sun } from "lucide-react";
 import { motion } from "motion/react";
 
 const features = [
   {
-    icon: <Shield className="w-10 h-10 text-red-500" />,
-    title: "Defesa Pessoal",
-    description: "Aprenda técnicas eficazes para se proteger em qualquer situação, aumentando sua confiança e segurança.",
+    icon: <Brain className="w-10 h-10 text-yellow-500" />,
+    title: "Yoga Científica",
+    description: "Uma abordagem fundamentada na anatomia e fisiologia para alinhar corpo e mente com precisão e segurança.",
   },
   {
-    icon: <Target className="w-10 h-10 text-red-500" />,
-    title: "Disciplina Mental",
-    description: "Desenvolva foco, resiliência e autocontrole através da filosofia tradicional das artes marciais.",
+    icon: <Activity className="w-10 h-10 text-red-500" />,
+    title: "Chi Kung Reflexo",
+    description: "Exercícios de energia vital que harmonizam o fluxo energético e fortalecem o sistema imunológico.",
   },
   {
-    icon: <Zap className="w-10 h-10 text-red-500" />,
-    title: "Condicionamento",
-    description: "Queime calorias, ganhe força e melhore sua flexibilidade com treinos intensos e dinâmicos.",
+    icon: <Sun className="w-10 h-10 text-yellow-500" />,
+    title: "Meditação Plena",
+    description: "Técnicas de mindfulness para reduzir o estresse, aumentar o foco e promover a paz interior.",
   },
   {
-    icon: <Users className="w-10 h-10 text-red-500" />,
-    title: "Comunidade",
-    description: "Treine em um ambiente de apoio mútuo, onde cada aluno ajuda o outro a evoluir e crescer.",
+    icon: <Heart className="w-10 h-10 text-red-500" />,
+    title: "Saúde Integral",
+    description: "Cuidado completo que une a disciplina marcial com o bem-estar holístico do praticante.",
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="py-24 bg-neutral-950">
-      <div className="container mx-auto px-6">
+    <section id="features" className="py-24 bg-neutral-950 relative">
+      {/* Decorative gradient */}
+      <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-neutral-900 to-neutral-950 pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-red-500 font-bold tracking-widest uppercase mb-2 text-sm font-[Oswald]">
-            Por que treinar conosco?
+          <h2 className="text-yellow-500 font-bold tracking-[0.2em] uppercase mb-2 text-sm font-[Oswald]">
+            Nossa Filosofia
           </h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white uppercase font-[Oswald]">
-            Muito mais que <span className="text-red-600">Luta</span>
+            Equilíbrio entre <span className="text-red-600">Força</span> e <span className="text-yellow-500">Serenidade</span>
           </h3>
         </div>
 
@@ -42,13 +45,13 @@ export const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-neutral-900/50 p-8 rounded-sm border border-neutral-800 hover:border-red-900/50 transition-colors group"
+              className="bg-neutral-900/80 backdrop-blur-sm p-8 rounded-sm border-t-2 border-transparent hover:border-yellow-500 transition-all duration-300 group hover:-translate-y-2 hover:shadow-xl hover:shadow-yellow-900/10"
             >
-              <div className="mb-6 p-4 bg-neutral-950 rounded-full inline-block group-hover:scale-110 transition-transform duration-300 border border-neutral-800 group-hover:border-red-900">
+              <div className="mb-6 p-4 bg-neutral-950 rounded-full inline-block shadow-lg border border-neutral-800 group-hover:border-yellow-500/30 transition-colors">
                 {feature.icon}
               </div>
               <h4 className="text-xl font-bold text-white mb-3 uppercase font-[Oswald]">
